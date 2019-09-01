@@ -38,7 +38,7 @@ public class GameScreen implements Screen {
         this.game = gam;
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 800, 480);
-        batch = new SpriteBatch();
+//        batch = new SpriteBatch();
         dropImage = new Texture("droplet.png");
         bucketImage = new Texture("bucket.png");
 
@@ -69,7 +69,9 @@ public class GameScreen implements Screen {
         lastDropTime = TimeUtils.nanoTime();
     }
 
-    public void render(Float delta) {
+
+    @Override
+    public void render(float delta) {
         Gdx.gl.glClearColor(0, 0, 0.2f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         camera.update();
@@ -127,10 +129,7 @@ public class GameScreen implements Screen {
         rainMusic.play();
     }
 
-    @Override
-    public void render(float delta) {
 
-    }
 
     @Override
     public void resize(int width, int height) {
